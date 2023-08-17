@@ -1,4 +1,4 @@
-# Problem Statement: Consider an array of towers with width 1 unit, Calculate the amount of water trapped. plot a bar
+# Problem Statement: Consider an array of towers with width 1 unit, Calculate the amount of water trapped. HINT: plot a bar
 # chart of the given array and see the water trapped in between the towers.
 
 
