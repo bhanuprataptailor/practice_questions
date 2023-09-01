@@ -36,7 +36,7 @@ def optimal_solution(S, T):
     j1 = 0
     j2 = 0
 
-    while p1 != 0 and p2 != 0:
+    while p1 >= 0 and p2 >= 0:
         while S[p1] == '#':
             j1 += 1
             p1 -= 1
@@ -66,12 +66,12 @@ def optimal_solution(S, T):
 S = '#####BACK'
 T = '#####A#BACC#K'
 
-a = time()
-print(string_comparision(S, T))
-print(time() - a)
-a = time()
-print(optimal_solution(S, T))
-print(time() - a)
+# a = time()
+# print(string_comparision(S, T))
+# print(time() - a)
+# a = time()
+# print(optimal_solution(S, T))
+# print(time() - a)
 
 
 S = '#####BACK'
