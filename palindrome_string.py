@@ -18,16 +18,16 @@ def is_palindrome(s):
     return True
 
 
-special_characters = [' ', ',', '.', '#']
+special_characters = [' ', ',', '.', '#', ':']
 
 
 def is_palindrome_i(s):
-    # if spaces are ignored
+    # if spaces are ignored, case in sensitive
     left = 0
     right = len(s) - 1
     while left < right:
         if s[left] not in special_characters and s[right] not in special_characters:
-            if s[left] != s[right]:
+            if s[left].lower() != s[right].lower():
                 return False
             else:
                 left += 1
@@ -50,3 +50,6 @@ print(is_palindrome(s=''))
 
 print(is_palindrome(s='ab a'))
 print(is_palindrome_i(s='ab a'))
+
+print(is_palindrome(s='ab a'))
+print(is_palindrome_i(s='A man, a plan, a canal: Panama'))
