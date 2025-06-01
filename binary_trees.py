@@ -85,6 +85,32 @@ class BinaryTree:
         print(root.val, end=" ")
 
 
+class BinarySearchTree(BinaryTree):
+
+    def insert(self, val):
+        node = Node(val)
+        if not self.root:
+            self.root = node
+            print(f"Inserted root {val}")
+            return
+        cur_root = self.root
+        while cur_root:
+            if val < cur_root.val:
+                if not cur_root.left:
+                    cur_root.left = node
+                    print(f"Inserted element {val} at left of {cur_root.val}")
+                    break
+                else:
+                    cur_root = cur_root.left
+            else:
+                if not cur_root.right:
+                    cur_root.right = node
+                    print(f"Inserted element {val} at right of {cur_root.val}")
+                    break
+                else:
+                    cur_root = cur_root.right
+
+
 """
 I am inserting the below tree : [a, b, c, d, e, 'NULL', f]
          a 
@@ -101,7 +127,7 @@ bt = BinaryTree()
 for element in elements:
     bt.insert(element)
 
-print("\n\n----TREE----")
+print("\n\n----BINARY TREE----")
 bt.print()
 
 print("\n\n----INORDER----")
@@ -112,3 +138,23 @@ bt.preorder()
 
 print("\n\n----POSTORDER----")
 bt.postorder()
+
+
+print("\n\n----BINARY SEARCH TREE----")
+
+elements_bst = ['6', '1', '0', '3', '5', '4', '7', '2']
+bst = BinarySearchTree()
+
+for element in elements_bst:
+    bst.insert(element)
+
+bst.print()
+
+print("\n\n----INORDER----")
+bst.inorder()
+
+print("\n\n----PREORDER----")
+bst.preorder()
+
+print("\n\n----POSTORDER----")
+bst.postorder()
